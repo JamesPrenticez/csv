@@ -1,12 +1,15 @@
 module.exports = (sequelize, Sequelize) => {
-	const Model = sequelize.define('cat', {	
-	  id: {
+	const Customer = sequelize.define('invoices', {	
+	  invoice_id: {
             type: Sequelize.INTEGER,
             autoIncrement: true,
             primaryKey: true
       },
-	  job: {
-			type: Sequelize.STRING
+	  billing_period: {
+			type: Sequelize.DATE
+	  },
+	  job_number: {
+			type: Sequelize.INTEGER
 	  },
 	  company: {
 			type: Sequelize.STRING
@@ -14,12 +17,9 @@ module.exports = (sequelize, Sequelize) => {
 	  invoice_number: {
 			type: Sequelize.STRING
 	  },
-	  assigned_cost_code: {
-			type: Sequelize.STRING
-	  },
-	  amount_excl_gst: {
-			type: Sequelize.STRING
+	  amount: {
+			type: Sequelize.INTEGER
 	  }
 	});
-	return Model;
+	return Customer;
 }

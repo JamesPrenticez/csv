@@ -17,7 +17,7 @@ server.use(express.static(path.join(__dirname, './public')))
 
 // Somehow need to fix this.....
 // //What does this do?
-// global.__basedir = __dirname;   
+global.__basedir = __dirname;   
 // //force: true will drop the table if it already exists
 db.sequelize.sync({force: true}).then(() => {
     console.log('Drop and Resync with { force: true }');

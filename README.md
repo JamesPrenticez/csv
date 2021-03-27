@@ -60,3 +60,13 @@ idle: 10000
 };
 
 module.exports = env;
+
+# Noob Hacks
+
+Change the excel.router.js file
+router.post('/api/file/upload', upload.single("file"), csvWorker.uploadFile); to>
+router.post('/api/file/upload', upload.any("file"), csvWorker.uploadFile);
+
+Change multer.config.js
+cb(null, file.fieldname + "-" + Date.now() + "-" + file.originalname) to>
+cb(null, Date.now() + "-" + file.originalname)
