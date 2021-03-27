@@ -14,10 +14,12 @@ const Json2csvParser = require('json2csv').Parser;
  * @param {*} req 
  * @param {*} res 
  */
+
 exports.uploadFile = (req, res) => {
     try{
         const customers = [];
-        fs.createReadStream( __basedir + './uploads/' + req.file.filename)
+        //fs.createReadStream( __basedir + '/uploads/' + req.file.originalname)
+        fs.createReadStream( __basedir + '/uploads/' + 'test.csv')
             .pipe(csv.parse({ headers: true }))
             .on('error', error => {
                 console.error(error);
@@ -26,13 +28,15 @@ exports.uploadFile = (req, res) => {
             .on('data', row => {
                 customers.push(row);
                 console.log(row);
+                console.log('hi')
             })
             .on('end', () => {
                 // Save customers to MySQL/PostgreSQL database
                 Customer.bulkCreate(customers).then(() => {
                     const result = {
                         status: "ok",
-                        filename: req.file.originalname,
+                        //filename: req.file.originalname,
+                        filename: 'test.csv',
                         message: "Upload Successfully!",
                     }
     
@@ -42,7 +46,7 @@ exports.uploadFile = (req, res) => {
     }catch(error){
         const result = {
             status: "fail",
-            filename: req.file.originalname,
+            filename: 'test.csv',
             message: "Upload Error! message = " + error.message
         }
         res.json(result);
@@ -61,7 +65,7 @@ exports.uploadMultipleFiles = async (req, res) => {
 	for (const file of req.files) {
         try{
             // Parsing CSV Files to data array objects
-            const csvParserStream = fs.createReadStream( __basedir + './uploads/' + file.filename)
+            const csvParserStream = fs.createReadStream( __basedir + '/uploads/' + file.filename)
                         .pipe(csv.parse({ headers: true }));
 
             var end = new Promise(function(resolve, reject) {
