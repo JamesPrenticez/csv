@@ -2,6 +2,7 @@ const stream = require('stream');
 const await = require('await')
 const fs = require('fs');
 const path = require('path');
+let pathway = __basedir + '\\server\\public';
 
 const db = require('../config/db.config.js');
 const Customer = db.Customer;
@@ -17,7 +18,7 @@ const Json2csvParser = require('json2csv').Parser;
 exports.uploadFile = (req, res) => {
     try{
         const customers = [];
-        fs.createReadStream(__basedir + "/uploads/" + req.file.filename)
+        fs.createReadStream(pathway + "\\uploads" + req.file.filename)
             .pipe(csv.parse({ headers: true }))
             .on('error', error => {
                 console.error(error);

@@ -1,8 +1,3 @@
-/**
- * Copyright by https://loizenai.com
- * Author: loizenai.com 
- */
-
  $(document).ready(function() {
 	
 	/**
