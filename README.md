@@ -70,3 +70,13 @@ router.post('/api/file/upload', upload.any("file"), csvWorker.uploadFile);
 Change multer.config.js
 cb(null, file.fieldname + "-" + Date.now() + "-" + file.originalname) to>
 cb(null, Date.now() + "-" + file.originalname)
+
+Hard code the filename in csv.controller.js
+filename: 'test.csv',
+
+# Xero Intergration
+
+Redo the database schema to match xero
+https://developer.xero.com/documentation/api/invoices
+
+# Build Front End

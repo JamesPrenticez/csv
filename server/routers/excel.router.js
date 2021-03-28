@@ -4,7 +4,7 @@ let upload = require('../config/multer.config.js');
 
 const csvWorker = require('../controllers/csv.controller.js');
 
-let path = __basedir + '/server/public';
+let path = __basedir + '/public';
 
 router.get('/', (req,res) => {
     console.log("__basedir" + __basedir);

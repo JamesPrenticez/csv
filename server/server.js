@@ -1,5 +1,6 @@
 const path = require('path')
 const express = require('express')
+const cors = require('cors')
 
 const db = require('./config/db.config.js');
 
@@ -10,6 +11,7 @@ const server = express()
 let router = require('./routers/excel.router.js');
 
 server.use('/', router);
+server.use(cors())
 server.use(express.static('resources'));
 
 server.use(express.json())
