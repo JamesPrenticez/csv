@@ -1,6 +1,14 @@
 import React from 'react'
+import { addFile } from '../api'
 
-export default class Homepage extends React.Component {
+export default class Files extends React.Component {
+
+    // handleSubmit = () => {
+    //     console.log('here')
+	// 	addFile()
+	// }
+    // onClick={this.handleSubmit}
+
 render(){
         return(
             <>

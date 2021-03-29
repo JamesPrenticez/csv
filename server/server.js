@@ -8,14 +8,20 @@ global.__basedir = __dirname;
 
 const server = express()
 
-let router = require('./routers/excel.router.js');
+let fileRoutes = require('./routers/excel.router.js');
 
-server.use('/', router);
+//Middlewate
 server.use(cors())
-server.use(express.static('resources'));
-
 server.use(express.json())
+server.use(express.static('resources'));
 server.use(express.static(path.join(__dirname, './public')))
+
+//Routes
+server.use('/', fileRoutes);
+
+server.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'))
+})
 
 // Somehow need to fix this.....
 // //What does this do?

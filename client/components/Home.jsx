@@ -9,7 +9,7 @@ export default class Homepage extends React.Component {
                 <h4>Getting Started</h4>
                 <p>Download the example CSV files here:</p>
                 <ul>
-                    <li><a href='/data/employee.csv' download>Employee</a></li>
+                    <li><a href='/data/employees.csv' download>Employee</a></li>
                     <li><a href='/data/timesheets.csv' download>Timesheets</a></li>
                     <li><a href='/data/contacts.csv' download>Contacts</a></li>
                     <li><a href='/data/invoices.csv' download>Invoices</a></li>

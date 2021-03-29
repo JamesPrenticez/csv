@@ -4,16 +4,13 @@ let upload = require('../config/multer.config.js');
 
 const csvWorker = require('../controllers/csv.controller.js');
 
-let path = __basedir + '/public';
-
-router.get('/', (req,res) => {
-    console.log("__basedir" + __basedir);
-    res.sendFile(path + "/index.html");
-});
-
+// POST api/file/upload
 router.post('/api/file/upload', upload.any('file'), csvWorker.uploadFile);
+
+// POST api/file/multiple/upload
 router.post('/api/file/multiple/upload', upload.array('files', 4), csvWorker.uploadMultipleFiles);
 
-router.get('/api/file', csvWorker.downloadFile);
+// GET api/file/download
+router.get('/api/file/download', csvWorker.downloadFile);
 
 module.exports = router;

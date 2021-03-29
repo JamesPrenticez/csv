@@ -17,6 +17,7 @@ const Json2csvParser = require('json2csv').Parser;
 
 exports.uploadFile = (req, res) => {
     try{
+        // let {originalname} = req.body.file
         const customers = [];
         //fs.createReadStream( __basedir + '/uploads/' + req.file.originalname)
         fs.createReadStream( __basedir + '/uploads/' + 'test.csv')

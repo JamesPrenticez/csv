@@ -7,24 +7,28 @@ import { wrapHistory } from 'oaf-react-router'
 
 import Nav from './Nav'
 import Home from './Home'
-import Upload from './Upload'
+import Files from './Files'
 import Information from './Information'
+import Error404 from './Error404'
 
 class App extends React.Component {
   render(){
     const history = createBrowserHistory()
     wrapHistory(history)
   return (
-    <Router history={history}>
-          <Route path='/' render={props => <Nav {...props} />} />
-          <div id='wrapper'>
-          <Switch>
-                <Route exact path='/' render={props => <Home {...props} />} />
-                <Route exact path='/upload' render={props => <Upload {...props} />} />
-                <Route exact path='/information' render={props => <Information {...props} />} />
-          </Switch>
-          </div>
-    </Router>
+
+    <Files />
+    // <Router history={history}>
+    //       <Route path='/' render={props => <Nav {...props} />} />
+    //       <div id='wrapper'>
+    //       <Switch>
+    //             <Route exact path='/' render={props => <Home {...props} />} />
+    //             <Route exact path='/files' render={props => <Files {...props} />} />
+    //             <Route exact path='/information' render={props => <Information {...props} />} />
+    //             <Route exact path='*' component={Error404} />
+    //       </Switch>
+    //       </div>
+    // </Router>
 
     )
   }

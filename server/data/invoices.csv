@@ -1,2 +1,0 @@
-﻿InvoiceID,Type,ContactID,Date,DueDate,DueDateString,LineAmountTypes,Description,Quantity,UnitAmount,AccountCode,DiscountRate
-INV123456789,ACCREC,eaa28f49-6028-4b6e-bb12-d8f6278073fc,1518685950940+0000,,2009-06-06T00:00:00,Exclusive,Consulting services as agreed (20% off standard rate),10,100,200,20

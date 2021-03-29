@@ -14,7 +14,7 @@ export default class Nav extends React.Component {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-            <Link className="nav-item nav-link active" to="/upload">Upload<span className="sr-only">(current)</span></Link>
+            <Link className="nav-item nav-link active" to="/files">Files<span className="sr-only">(current)</span></Link>
             <Link className="nav-item nav-link active" to="/information">Information<span className="sr-only">(current)</span></Link>
             </div>
         </div>
