@@ -1,0 +1,2 @@
+﻿ContactID,ContactStatus,Name,FirstName,LastName,EmailAddress,BackAccountDetails,TaxNumber,AccountsRecievableTaxType,AccountsPayableTaxType,AddressType,AddressLine1,City,PostalCode,AttentionTo,AddressType,PhoneType,PhoneNumber,PhoneAreaCode,PhoneCountryCode,UpdatedDateUTC,IsSupplier,IsCustomer,DefaultCurrency
+bd2270c3-8706-4c11-9cfb-000b551c3f51,ACTIVE,ABC Limited,Andrea,Dutchess,a.dutchess@abclimited.com,45465844,4.15465E+11,INPUT2,OUTPUT2,POBOX,P O Box 123,Wellington,6011,Andrea,STREET,DEFAULT,1111111,04,64,1488391422280+0000,FALSE,TRUE,NZD
