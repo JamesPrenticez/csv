@@ -17,7 +17,7 @@ server.use(express.static('resources'));
 server.use(express.static(path.join(__dirname, './public')))
 
 //Routes
-server.use('/', fileRoutes);
+server.use('/api/v1/file', fileRoutes);
 
 server.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'))

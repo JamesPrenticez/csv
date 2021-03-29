@@ -10,7 +10,7 @@
 		let formData = new FormData($(this)[0]);
 		
 		$.ajax({
-			url : '/api/file/upload',
+			url : '/api/v1/file/upload',
 			type : 'POST',
 			data : formData,
 			async : false,

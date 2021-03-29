@@ -4,7 +4,7 @@ const env = {
   host: 'localhost',
   port: 5432,
   database: 'csv',
-    dialect: 'postgres',
+  dialect: 'postgres',
     pool: {
       max: 5,
       min: 0,
